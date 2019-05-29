@@ -1,0 +1,15 @@
+{
+  "name": "IAB204-Assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"cd server && npm run dev \" \"cd client && set HTTPS=true&& set PORT=443 && npm run start\"",
+    "production": "concurrently --kill-others-on-fail \"cd server && npm run start \" \"cd client && set HTTPS=true && serve -s build -l 80\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
