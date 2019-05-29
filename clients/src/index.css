@@ -1,0 +1,381 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+body, html, #root{
+  height: 100%;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html {
+  overflow: hidden;
+}
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+.w100{
+  width: 100%
+}
+.h100{
+  height: 100%
+}
+
+.panel-controller{
+  z-index: 1000000;
+  position: absolute;
+  height: 100%;
+  background: rgb(245, 245, 245);
+  width: 35%;
+  top:0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+  padding-top: 64px;
+  height: calc(100% - 64px);
+
+}
+
+
+
+.account-setting{
+  top:10px;
+  z-index: 1000000;
+  position: absolute;
+  right:10px;
+}
+.card{
+  background: white;
+  box-sizing: border-box;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin: 8px;
+  padding: 16px;
+  position: relative;
+}
+.card-header{
+  font-size: 15px;
+  overflow: hidden;
+  padding: 10px 20px;
+  padding-left: 0;
+  text-overflow: ellipsis;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 600;
+}
+
+.CardContent{
+
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: slategrey;
+outline: 1px solid slategrey;
+}
+.oy-scroll {
+  overflow-y: scroll
+}
+
+.panel-header {
+  position: absolute;
+    width: 35%;
+    z-index: 10000000;
+    top: 0;
+    
+}
+
+.d-inline {
+  display: inline-flex
+}
+.p-8px {
+  padding:8px
+}
+
+.search-icons {
+  padding:4px
+}
+
+.data-table {
+  height: 222px;
+  overflow-y: scroll;
+}
+.leaflet-popup-content {
+  text-align: center
+}
+
+.marker-location {
+  font-size: 16px
+}
+.marker-total {
+  font-size: 16px
+}
+
+.marker-formatted-address {
+  font-size: 10px
+}
+
+.leaflet-marker-icon {
+
+
+
+  filter: hue-rotate(140deg)
+}
+
+.filter-button {
+  position: absolute;
+  z-index: 2;
+  right: 73px;
+  height: calc(100% - 16px);
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  color:#bbbbbb !important;
+  top:10px;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+#login {
+  min-width: 31%;
+  position: absolute;
+  top: 50%;
+  width: min-content;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #9f9f9f;
+}
+#login input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #D2D4DE;
+  border-radius: 4px;
+  box-shadow: none;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding:10px 15px 10px;
+  margin-bottom:16px; 
+ 
+}
+#login input,button {
+  width: -webkit-fill-available;
+}
+#login button {
+  font-size: 16px;
+  line-height: 21px;
+  color: #fff;
+  background: #0970B9;
+  border-color: #0970B9;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 9px 12px 8px;
+  margin: 0;
+  min-height: 32px;
+  position: relative;
+  text-decoration: none;
+  margin-bottom:16px; 
+  transition: opacity 0.2s linear, border-color 0.2s linear;
+}
+#login a {
+  text-decoration: none;
+  color: #0970B9;
+}
+#login h1 {
+  font-size: 31px;
+  margin-bottom: 24px;
+  font-family: 'Raleway', sans-serif;
+  color: #003366;
+}
+.little {
+  font-size: 12px;
+}
+
+#login input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #9f9f9f;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+}
+#login input::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+}
+#login input:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+}
+#login input:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+}
+.login-background {
+  background:url("/adventure-baltic-sea-car-21014.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+.p-28 {
+  padding:28px 22px
+}
+
+.d-block {
+  display: block !important
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000000000000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+.modal .backgound {
+
+  position: fixed; /* Stay in place */
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 8% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+/* Add Animation */
+@keyframes fadeIn {
+  from { opacity: 0}
+  to {opacity: 1}
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.mb-1 {
+  margin-bottom: 8px
+}
+.pl-1 {
+  padding-left: 8px
+}
+.w-100 {
+  width: 100%;
+}
+.required {
+  color:red
+}
+
+.subtitle {
+  font-size: 11px;
+}
+
+.logout-button i {
+  color: initial;
+  width: 20px !important;
+  padding: 10px;
+  font-size: 20px;
+  background: aliceblue;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.logout-button i:hover {
+  color: initial;
+  width: 20px !important;
+  padding: 10px;
+  font-size: 20px;
+  background: aliceblue;
+  border-radius: 50px;
+  box-shadow: none
+}
+text.recharts-text.recharts-cartesian-axis-tick-value {
+  font-size: 10px
+}
+
+.editable {
+  padding: 0;
+  border: none;
+  font-size: 16px;
+  /* font-weight: bold; */
+  width: 24px;
+
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
