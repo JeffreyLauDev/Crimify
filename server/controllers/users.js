@@ -89,7 +89,7 @@ module.exports = {
 
     },
     jwtCheck(req, res, next) {
-        var token = req.headers.authorization.replace("Bearer ", "")
+        var token = req.headers.authorization !== undefined ? req.headers.authorization.replace("Bearer ", "") : ""
         jwt.verify(token, JwtSecret, function (err, decoded) {
             if (err) {
                 return res.status(401).send({
