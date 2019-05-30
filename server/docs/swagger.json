@@ -1,0 +1,478 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "CAB230 : Web Computing API",
+        "description": "This API is to be used during development of assignments for the QUT CAB230 Web Computing Unit. If you have any issues, please contact n10050256@qut.edu.au",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://localhost:8443"
+        },
+        {
+            "url": "https://172.22.30.8:8443/"
+        }
+    ],
+    "basePath": "",
+    "produces": [
+        "application/json"
+    ],
+    "tags": [
+        {
+            "name": "Authentication"
+        },
+        {
+            "name": "Search"
+        },
+        {
+            "name": "Helpers"
+        }
+    ],
+    "paths": {
+        "/offences": {
+            "get": {
+                "tags": [
+                    "Helpers"
+                ],
+                "description": "List of offences to perform searches for",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "examples": {
+                            "": {
+                                "offences": [
+                                    "Advertising Prostitution",
+                                    "Armed Robbery"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/areas": {
+            "get": {
+                "tags": [
+                    "Helpers"
+                ],
+                "description": "List of Areas to filter search results by",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "examples": {
+                            "": {
+                                "areas": [
+                                    "Aurukun Shire Council",
+                                    "Balonne Shire Council"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ages": {
+            "get": {
+                "tags": [
+                    "Helpers"
+                ],
+                "description": "List of Ages to filter search results by",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "examples": {
+                            "": {
+                                "ages": [
+                                    "Adult",
+                                    "Juvenile"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/genders": {
+            "get": {
+                "tags": [
+                    "Helpers"
+                ],
+                "description": "List of Genders to filter search results by",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "examples": {
+                            "": {
+                                "genders": [
+                                    "Female",
+                                    "Male"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/years": {
+            "get": {
+                "tags": [
+                    "Helpers"
+                ],
+                "description": "List of Years to filter search results by",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "examples": {
+                            "": {
+                                "years": [
+                                    2001,
+                                    2002
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Registers a new user account",
+                "description": "This is your starting point.",
+                "operationId": "popUpdate",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "demo-user@gmail.com",
+                                        "required": true
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "demouserpassword",
+                                        "required": true
+                                    }
+                                },
+                                "example": {
+                                    "email": "demo-user@gmail.com",
+                                    "password": "demouserpassword"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Error": {
+                                    "type": "string",
+                                    "enum": [
+                                        "true",
+                                        "false"
+                                    ]
+                                },
+                                "Message": {
+                                    "type": "string"
+                                }
+                            },
+                            "examples": {
+                                "": {
+                                    "genders": [
+                                        "Female",
+                                        "Male"
+                                    ]
+                                }
+                            }
+                        },
+                        "examples": {
+                            "": {
+                                "message": "yay! you've successfully registered your user account :)"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Error": {
+                                    "type": "string",
+                                    "enum": [
+                                        "true",
+                                        "false"
+                                    ]
+                                },
+                                "Message": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "examples": {
+                            "": {
+                                "message": "oops! It looks like that user already exists :("
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Login with an existing user account",
+                "operationId": "popUpdate",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "demo-user@gmail.com",
+                                        "required": true
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "demouserpassword",
+                                        "required": true
+                                    }
+                                },
+                                "example": {
+                                    "email": "demo-user@gmail.com",
+                                    "password": "demouserpassword"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Error": {
+                                    "type": "string",
+                                    "enum": [
+                                        "true",
+                                        "false"
+                                    ]
+                                },
+                                "Message": {
+                                    "type": "string"
+                                }
+                            },
+                            "examples": {
+                                "": {
+                                    "genders": [
+                                        "Female",
+                                        "Male"
+                                    ]
+                                }
+                            }
+                        },
+                        "examples": {
+                            "": {
+                                "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1Nzg2LCJlbWFpbCI6ImRlbW8xMjM0QGdtYWlsLmNvbSJ9LCJpYXQiOjE1NTUzMjQ2MDIsImV4cCI6MTU1NTQxMTAwMn0.mo85iKuAQ_h8n8-6pkeNNs5CCnV0G8hScxhi_ml_Q6c",
+                                "token_type": "Bearer",
+                                "expires_in": 86400
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Error": {
+                                    "type": "string",
+                                    "enum": [
+                                        "true",
+                                        "false"
+                                    ]
+                                },
+                                "Message": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "examples": {
+                            "": {
+                                "message": "invalid login - bad password"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "description": "Search for Offence data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "parameters": [
+                    {
+                        "name": "offence",
+                        "in": "query",
+                        "description": "Name of the Offence to search for",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "area",
+                        "in": "query",
+                        "description": "List of comma-separated Areas (LGAs) to filter search results by",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "age",
+                        "in": "query",
+                        "description": "List of comma-separated Ages to filter search results by",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "in": "query",
+                        "description": "List of comma-separated Genders to filter search results by",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "year",
+                        "in": "query",
+                        "description": "List of comma-separated Years to filter search results by",
+                        "schema": {
+                            "type": "intager"
+                        }
+                    },
+                    {
+                        "name": "month",
+                        "in": "query",
+                        "description": "List of comma-separated Months to filter search results by (1-12)",
+                        "schema": {
+                            "type": "intager"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "examples": {
+                            "": {
+                                "query": {
+                                    "offence": "Homicide (Murder)"
+                                },
+                                "result": [
+                                    {
+                                        "LGA": "Aurukun Shire Council",
+                                        "total": 4,
+                                        "lat": -27.470812,
+                                        "lng": 153.022455
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "examples": {
+                            "": {
+                                "message": "oops! it looks like you're missing the offence query parm"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "examples": {
+                            "": {
+                                "message": "oh no! it looks like your authorization token is invalid..."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

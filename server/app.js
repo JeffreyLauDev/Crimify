@@ -5,7 +5,8 @@ const Cors = require("cors");
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 const helmet = require('helmet')
-
+const swaggerUI = require('swagger-ui-express');
+const swaggerDocument = require('./docs/swagger.json')
 var app = express();
 
 app.use(helmet())
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 require("./routes")(app);
+app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
 app.get("*", (req, res) =>
   res.status(200).send({
