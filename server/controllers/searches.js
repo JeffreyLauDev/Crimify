@@ -8,7 +8,11 @@ const Op = Sequelize.Op;
 module.exports = {
 
     search(req, res) {
-
+        if (req.query.offence === undefined) {// area query
+            return res.status(400).send(
+                { "error": "oops! it looks like you're missing the offence query parm", "message": "oops! it looks like you're missing the offence query parm" }
+            )
+        }
         let whereCondition = {}
         if (req.query.area !== undefined) {// area query
             whereCondition = {
@@ -57,6 +61,14 @@ module.exports = {
 
         })
             .then(offenceResult => {
+                if (!offenceResult) {
+                    return res.status(500).send(
+                        {
+                            "error": "oh no! It looks like there was a database error while performing your search, give it another try...",
+                            "e": {}
+                        }
+                    )
+                }
                 area.findAll().then(areas => {
 
                     offence.findAll({
@@ -94,6 +106,7 @@ module.exports = {
                 })
 
             })
+
 
     },
 

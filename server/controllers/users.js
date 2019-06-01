@@ -39,6 +39,7 @@ module.exports = {
     },
 
     login(req, res) {
+
         if (req.body.email === undefined || req.body.password === undefined) {
             return res.status(401).send({
                 message: "invalid login - you need to supply both an email and password"
@@ -92,9 +93,7 @@ module.exports = {
         var token = req.headers.authorization !== undefined ? req.headers.authorization.replace("Bearer ", "") : ""
         jwt.verify(token, JwtSecret, function (err, decoded) {
             if (err) {
-                return res.status(401).send({
-                    message: "oh no! it looks like your authorization token is invalid..."
-                })
+                return res.status(401).send({ "error": "oops! it looks like you're missing the authorization header", "message": "oops! it looks like you're missing the authorization header" })
             }
             else {
                 next()
