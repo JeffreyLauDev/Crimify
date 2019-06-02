@@ -17,8 +17,8 @@
     "@fortawesome/react-fontawesome": "^0.1.4"
   },
   "scripts": {
-    "start:U": "HTTPS=true&& PORT=443 && npm run start",
-    "start": "react-scripts start",
+    "start": "set HTTPS=true&& set PORT=443 &&npm startW",
+    "startW": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
