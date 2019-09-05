@@ -6,6 +6,7 @@ For development, you will only need Node.js installed on your environement.
 
 ## Doc
 [Client-side doc](./ClientReport.pdf)
+
 [Server-side doc](./ServerReport.pdf)
 ### Node
 
