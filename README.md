@@ -7,7 +7,7 @@ For development, you will only need Node.js installed on your environement.
 
 ## Demo
 
-[Video Demo](https://www.youtube.com/watch?v=MVs1H8SfkfA&feature=youtu.be)
+[Video Demo](https://youtu.be/1wkbn0OYNhc)
 
 [Demo Swagger API site](https://crimify-backend.herokuapp.com)
 
